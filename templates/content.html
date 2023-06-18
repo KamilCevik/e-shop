@@ -1,0 +1,153 @@
+{% load static %}
+
+
+
+<!-- section -->
+<div class="section">
+  <!-- container -->
+  <div class="container">
+    <!-- row -->
+    <div class="row">
+      <!-- section title -->
+      <div class="col-md-12">
+        <div class="section">
+          <h2 class="title">Products of the Day</h2>
+          <div class="pull-right">
+            <div class="product-slick-dots-2 custom-dots"></div>
+          </div>
+        </div>
+      </div>
+      <!-- section title -->
+      {% for rs in dayproducts %}
+
+      <!-- Product Single -->
+      <div class="col-md-3 col-sm-6 col-xs-6">
+        <div class="product product-single product-hot" style="height: 450px;" >
+          <div class="product-thumb">
+            <a href="/product/{{ rs.id }}/{{ rs.slug }}" class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick view</a>
+            <img src="{{rs.image.url}}" width="300" height="200" alt="" />
+          </div>
+          <div class="product-body">
+            <h3 class="product-price">{{rs.price}}</h3>
+            <div class="product-rating">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-o empty"></i>
+            </div>
+            <h2 class="product-name"><a href="/product/{{ rs.id }}/{{ rs.slug }}">{{rs.title}}</a></h2>
+            <div class="product-btns">
+              <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
+              <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
+              <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i><a href="/order/addtocart/{{rs.id}}"> Add To Cart</a></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /Product Single -->
+{% endfor %}
+    </div>
+    <!-- /row -->
+  </div>
+  <!-- /container -->
+</div>
+<!-- /section -->
+
+
+<!-- section -->
+<div class="section">
+  <!-- container -->
+  <div class="container">
+    <!-- row -->
+    <div class="row">
+      <!-- section title -->
+      <div class="col-md-12">
+        <div class="section">
+          <h2 class="title">Recently Added Products</h2>
+        </div>
+      </div>
+      <!-- section title -->
+      {% for rs in lastproducts %}
+
+      <!-- Product Single -->
+      <div class="col-md-3 col-sm-6 col-xs-6">
+        <div class="product product-single" style="height: 450px;" >
+          <div class="product-thumb">
+            <a href="/product/{{ rs.id }}/{{ rs.slug }}" class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick view</a>
+            <img src="{{rs.image.url}}" width="300" height="200" alt="" />
+          </div>
+          <div class="product-body">
+            <h3 class="product-price">{{rs.price}}</h3>
+            <div class="product-rating">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-o empty"></i>
+            </div>
+            <h2 class="product-name"><a href="/product/{{ rs.id }}/{{ rs.slug }}">{{rs.title}}</a></h2>
+            <div class="product-btns">
+              <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
+              <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
+              <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> <a href="/order/addtocart/{{rs.id}}"> Add To Cart</a></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /Product Single -->
+{% endfor %}
+     
+    </div>
+    <!-- /row -->
+
+   
+    <!-- row -->
+    <div class="row">
+      <!-- section title -->
+      <div class="col-md-12">
+        <div class="section">
+          <h2 class="title">Our Picks for You</h2>
+        </div>
+      </div>
+      <!-- section title -->
+
+{% for rs in randomproducts %}
+  
+
+  
+      <!-- Product Single -->
+      <div class="col-md-3 col-sm-6 col-xs-6">
+        <div class="product product-single" style="height: 350px;" >
+          <div class="product-thumb">
+            <a href="/product/{{ rs.id }}/{{ rs.slug }}" class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick view</a>
+            <img src="{{rs.image.url}}" width="300" height="250" alt="" />
+          </div>
+          <div class="product-body">
+            <h3 class="product-price">{{rs.price}}</h3>
+            <div class="product-rating">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-o empty"></i>
+            </div>
+            <h2 class="product-name"><a href="/product/{{ rs.id }}/{{ rs.slug }}">{{rs.title}}</a></h2>
+            <div class="product-btns">
+              <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
+              <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
+              <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> <a href="/order/addtocart/{{rs.id}}"> Add To Cart</a></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /Product Single -->
+      {% endfor %}
+      
+    </div>
+    <!-- /row -->
+  </div>
+  <!-- /container -->
+</div>
+<!-- /section -->
+<br><br><br>

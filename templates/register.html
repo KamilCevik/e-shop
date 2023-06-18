@@ -1,0 +1,70 @@
+{% extends 'homebase.html' %}
+
+{% block title %}
+  Üye Olmak
+{% endblock %}
+
+{% block keywords %}
+  {{categorydata.keywords}}
+{% endblock %}
+
+{% block description %}
+  {{categorydata.description}}
+{% endblock %}
+
+{% block head %}
+  <link rel="shortcut icon" type="image/x-icon" href="{{ setting.icon.url }}" />
+{% endblock %}
+
+{% block sidebar %}
+  {% include 'sidebar.html' %}
+{% endblock %}
+
+
+{% block content %}
+{%load crispy_forms_tags %} 
+
+    <!-- BREADCRUMB -->
+	<div id="breadcrumb">
+		<div class="container">
+			<ul class="breadcrumb">
+				<li><a href="/">Home Page</a></li>
+				<li class="active">Register</li>
+			</ul>
+		</div>
+	</div>
+	<!-- /BREADCRUMB -->
+
+	<!-- section -->
+	<div class="section">
+		<!-- container -->
+		<div class="container">
+			<!-- row -->
+			<div class="row">
+                
+   
+                <div class = "row">
+                    <div class = "col-md-6 offset-md-3">
+                        <h3>Giriş Yap</h3>
+                        <hr>
+                        <form method="POST">
+                            {% csrf_token %}
+                            {{ form|crispy }}
+                            <br>
+                            <button type="submit" class= "btn btn-danger">Giriş Yap</button>
+                        </form>
+                    
+                    </div>
+                </div>
+            
+
+			</div>
+			<!-- /row -->
+		</div>
+		<!-- /container -->
+	</div>
+	<!-- /section -->
+
+
+
+{% endblock %}
